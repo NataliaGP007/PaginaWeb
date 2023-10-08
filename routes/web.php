@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +22,13 @@ Route::get('/congreso', function () {
     return view('congreso');
 });
 
-Route::get('/alumno', function () {
-    return view('alumno');
+Route::get('/Registro de Alumno', function () {
+    return view('registroAlumno');
 });
 
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/alumnos', function () {
+    return view('alumnos');
+});
+
+Route::get('/registroAlumno', [StudentController::class, 'index']);
+Route::post('/registroAlumno', [StudentController::class, 'store']);
