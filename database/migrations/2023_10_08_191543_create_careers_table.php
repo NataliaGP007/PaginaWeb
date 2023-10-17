@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
+            $table->string("name", 200);
+            $table->char("reticule", 2);
+            $table->string("level", 200);
+            $table->string("official_key", 200);
+            $table->string("shortened_name", 10);
+            $table->integer("maximum_load");
+            $table->integer("total_credits");
+            $table->string("modality", 10);
             $table->timestamps();
         });
     }

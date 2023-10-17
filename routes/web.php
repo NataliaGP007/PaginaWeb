@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\StateController;
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LocalityController;
+use App\Http\Controllers\MunicipalityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +37,10 @@ Route::get('/alumnos', function () {
 
 Route::get('/registroAlumno', [StudentController::class, 'index']);
 Route::post('/registroAlumno', [StudentController::class, 'store']);
+
+Route::resource('states', StateController::class);
+Route::resource('municipalities', MunicipalityController::class);
+Route::resource('localities', LocalityController::class);
+Route::resource('roles', RoleController::class);
+Route::resource('careers', CareerController::class);
+Route::resource('students', StudentController::class);
